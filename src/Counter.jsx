@@ -1,15 +1,18 @@
-export default function Counter(){
-    let count = 0;
+import { useState } from "react";
 
-    function increaseCount(){
-        count += 1;
+export default function Counter(){
+    let [count,setCount]= useState(0);
+
+    let incCount = () => {
+        // count = count + 1;
+        setCount(count + 1);
         console.log(count);
     }
 
     return (
         <div>
             <h3>Count : {count}</h3>
-            <button onClick={increaseCount}>Increase Count</button>
+            <button onClick={incCount}>Increase Count</button>
         </div>
     );
 }
